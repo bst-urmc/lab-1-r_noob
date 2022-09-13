@@ -242,22 +242,42 @@ class="math inline">\(-0.0645\)</span>. This is similar to <span
 class="math inline">\(r_{d}\)</span> in the sense that data does not
 correlate very well since they are both close to <span
 class="math inline">\(0\)</span>. The negative symbol indicates that
-they increase/decrease in opposite directions. </strong>      </p>
-<ol start="4" style="list-style-type: decimal">
-<li>Plot <code>y</code> vs. <code>x</code> for the <code>circle</code>
-dataset. You can (and should) reuse code we introduced above, just
-replace the dataset name with the desired dataset. Then, calculate the
-correlation coefficient between <code>x</code> and <code>y</code> for
-this dataset. How does this value compare to the <code>r</code> of
-<code>dino</code>?</li>
-</ol>
-<p><em>You should pause again, commit changes with the commit message
-“Added answer for Ex 4”, and push.</em></p>
-<pre class="marginfigure"><code>Facet by the dataset variable, placing the plots in a 3 column grid, and don&#39;t add a legend.</code></pre>
-<ol start="5" style="list-style-type: decimal">
-<li>Finally, let’s plot all datasets at once. In order to do this we
-will make use of facetting.</li>
-</ol>
+they increase/decrease in opposite directions. </strong></p>
+<p> </p>
+</div>
+<div
+id="plot-y-vs.-x-for-the-circle-dataset.-you-can-and-should-reuse-code-we-introduced-above-just-replace-the-dataset-name-with-the-desired-dataset.-then-calculate-the-correlation-coefficient-between-x-and-y-for-this-dataset.-how-does-this-value-compare-to-the-r-of-dino"
+class="section level4">
+<h4>4. Plot <code>y</code> vs. <code>x</code> for the
+<code>circle</code> dataset. You can (and should) reuse code we
+introduced above, just replace the dataset name with the desired
+dataset. Then, calculate the correlation coefficient between
+<code>x</code> and <code>y</code> for this dataset. How does this value
+compare to the <code>r</code> of <code>dino</code>?</h4>
+<p> </p>
+<p><strong>We apply the same methods as in the previous
+exercises.</strong></p>
+<pre class="r"><code>circle_data = datasaurus_dozen %&gt;%
+  filter(dataset == &quot;circle&quot;)</code></pre>
+<pre class="r"><code>ggplot(data = circle_data, mapping = aes(x = x, y = y)) +
+  geom_point()</code></pre>
+<p><img src="lab01-hello-r_files/figure-html/unnamed-chunk-7-1.png" width="672" />
+ </p>
+<pre><code>dino_data %&gt;%
+  summarize(r = cor(x, y))</code></pre>
+<p> </p>
+<p><strong>We get the following correlation coefficient, <span
+class="math inline">\(r_{c}\)</span> to be <span
+class="math inline">\(-0.0683\)</span>. This is similar to <span
+class="math inline">\(r_{s}\)</span> and <span
+class="math inline">\(r_{d}\)</span> since the data does not correlate
+very well in the 3 datasets.</strong></p>
+</div>
+<div
+id="finally-lets-plot-all-datasets-at-once.-in-order-to-do-this-we-will-make-use-of-facetting."
+class="section level4">
+<h4>5. Finally, let’s plot all datasets at once. In order to do this we
+will make use of facetting.</h4>
 <pre class="r"><code>ggplot(datasaurus_dozen, aes(x = x, y = y, color = dataset))+
   geom_point()+
   facet_wrap(~ dataset, ncol = 3) +
