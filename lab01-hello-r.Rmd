@@ -25,25 +25,28 @@ options(
 
 
 # Data
+&nbsp;
+
+#### 1. Based on the help file, how many rows and how many columns does the `datasaurus_dozen` file have? What are the variables included in the data frame?
+&nbsp;
 
 
-#### 1. Based on the help file, how many rows and how many columns does the `datasaurus_dozen` file have? What are the variables included in the data frame? 
-
-
-**The dataset contains 1846 rows and 3 columns. The variables are x-values and y-values and data set.** 
-
-
-
-
+**The dataset contains $1846$ rows and $3$ columns. The variables are x-values and y-values and data set.**  
+&nbsp;
 
 
 
 
 
 # Data visualization and summary
+&nbsp;
+
+
 
 
 #### 2. Plot `y` vs. `x` for the `dino` dataset. Then, calculate the correlation coefficient between `x` and `y` for this dataset.
+
+&nbsp;
 
 
 
@@ -60,20 +63,47 @@ ggplot(data = dino_data, mapping = aes(x = x, y = y)) +
 ```
 
 
-**Using the following chunk of code we calculate the correlation coefficient $r$ to be -0.0645 **
+**Using the following chunk of code we calculate the correlation coefficient, $r_{d}$, to be $-0.0645$ **
 ```
 dino_data %>%
   summarize(r = cor(x, y))
 ```
+&nbsp;
 
 
 
 
 
 
-3. Plot `y` vs. `x` for the `star` dataset. You can (and should) reuse code we introduced above, just replace the dataset name with the desired dataset. Then, calculate the correlation coefficient between `x` and `y` for this dataset. How does this value compare to the `r` of `dino`?
+#### 3. Plot `y` vs. `x` for the `star` dataset. You can (and should) reuse code we introduced above, just replace the dataset name with the desired dataset. Then, calculate the correlation coefficient between `x` and `y` for this dataset. How does this value compare to the `r` of `dino`?
+&nbsp;
 
-*This is another good place to pause, commit changes with the commit message "Added answer for Ex 3", and push.*
+
+ 
+  
+   
+    
+     
+      
+**We answer this similarly to the question above by simply changing datasets.**
+```{r}
+star_data = datasaurus_dozen %>%
+  filter(dataset == "star")
+```
+```{r fig.fullwidth=TRUE}
+ggplot(data = star_data, mapping = aes(x = x, y = y)) +
+  geom_point()
+```
+&nbsp;
+ 
+  
+   
+   
+**we calculate the correlation coefficient , $r_{s}$, to be $-0.0645$. This is similar to $r_{d}$ in the sense that data does not correlate very well since they are both close to $0$. The negative symbol indicates that they increase/decrease in opposite directions. **
+&nbsp;
+&nbsp;
+&nbsp;
+
 
 4. Plot `y` vs. `x` for the `circle` dataset. You can (and should) reuse code we introduced above, just replace the dataset name with the desired dataset. Then, calculate the correlation coefficient between `x` and `y` for this dataset. How does this value compare to the `r` of `dino`?
 

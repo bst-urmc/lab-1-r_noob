@@ -178,24 +178,31 @@ pre code {
 
 <div id="data" class="section level1">
 <h1>Data</h1>
+<p> </p>
 <div
 id="based-on-the-help-file-how-many-rows-and-how-many-columns-does-the-datasaurus_dozen-file-have-what-are-the-variables-included-in-the-data-frame"
 class="section level4">
 <h4>1. Based on the help file, how many rows and how many columns does
 the <code>datasaurus_dozen</code> file have? What are the variables
 included in the data frame?</h4>
-<p><strong>The dataset contains 1846 rows and 3 columns. The variables
-are x-values and y-values and data set.</strong></p>
+<p> </p>
+<p><strong>The dataset contains <span
+class="math inline">\(1846\)</span> rows and <span
+class="math inline">\(3\)</span> columns. The variables are x-values and
+y-values and data set.</strong><br />
+ </p>
 </div>
 </div>
 <div id="data-visualization-and-summary" class="section level1">
 <h1>Data visualization and summary</h1>
+<p> </p>
 <div
 id="plot-y-vs.-x-for-the-dino-dataset.-then-calculate-the-correlation-coefficient-between-x-and-y-for-this-dataset."
 class="section level4">
 <h4>2. Plot <code>y</code> vs. <code>x</code> for the <code>dino</code>
 dataset. Then, calculate the correlation coefficient between
 <code>x</code> and <code>y</code> for this dataset.</h4>
+<p> </p>
 <p><strong>We pipe and filter the appropriate dataset and assign it to a
 variable.</strong></p>
 <pre class="r"><code>dino_data = datasaurus_dozen %&gt;%
@@ -205,20 +212,37 @@ variable.</strong></p>
   geom_point()</code></pre>
 <p><img src="lab01-hello-r_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 <p><strong>Using the following chunk of code we calculate the
-correlation coefficient <span class="math inline">\(r\)</span> to be
--0.0645 </strong></p>
+correlation coefficient, <span class="math inline">\(r_{d}\)</span>, to
+be <span class="math inline">\(-0.0645\)</span> </strong></p>
 <pre><code>dino_data %&gt;%
   summarize(r = cor(x, y))</code></pre>
-<ol start="3" style="list-style-type: decimal">
-<li>Plot <code>y</code> vs. <code>x</code> for the <code>star</code>
+<p> </p>
+</div>
+<div
+id="plot-y-vs.-x-for-the-star-dataset.-you-can-and-should-reuse-code-we-introduced-above-just-replace-the-dataset-name-with-the-desired-dataset.-then-calculate-the-correlation-coefficient-between-x-and-y-for-this-dataset.-how-does-this-value-compare-to-the-r-of-dino"
+class="section level4">
+<h4>3. Plot <code>y</code> vs. <code>x</code> for the <code>star</code>
 dataset. You can (and should) reuse code we introduced above, just
 replace the dataset name with the desired dataset. Then, calculate the
 correlation coefficient between <code>x</code> and <code>y</code> for
 this dataset. How does this value compare to the <code>r</code> of
-<code>dino</code>?</li>
-</ol>
-<p><em>This is another good place to pause, commit changes with the
-commit message “Added answer for Ex 3”, and push.</em></p>
+<code>dino</code>?</h4>
+<p> </p>
+<p><strong>We answer this similarly to the question above by simply
+changing datasets.</strong></p>
+<pre class="r"><code>star_data = datasaurus_dozen %&gt;%
+  filter(dataset == &quot;star&quot;)</code></pre>
+<pre class="r"><code>ggplot(data = star_data, mapping = aes(x = x, y = y)) +
+  geom_point()</code></pre>
+<p><img src="lab01-hello-r_files/figure-html/unnamed-chunk-5-1.png" width="672" />
+ </p>
+<p><strong>we calculate the correlation coefficient , <span
+class="math inline">\(r_{s}\)</span>, to be <span
+class="math inline">\(-0.0645\)</span>. This is similar to <span
+class="math inline">\(r_{d}\)</span> in the sense that data does not
+correlate very well since they are both close to <span
+class="math inline">\(0\)</span>. The negative symbol indicates that
+they increase/decrease in opposite directions. </strong>      </p>
 <ol start="4" style="list-style-type: decimal">
 <li>Plot <code>y</code> vs. <code>x</code> for the <code>circle</code>
 dataset. You can (and should) reuse code we introduced above, just
