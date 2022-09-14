@@ -5,6 +5,10 @@ author: "Meherab Hossain"
 output: 
   html_document: 
     self_contained: no
+    fig_width: 10
+    fig_height: 6
+    highlight: espresso
+    theme: cosmo
   tufte::tufte_html:
     tufte_variant: "envisioned"
     highlight: pygments
@@ -57,7 +61,7 @@ dino_data = datasaurus_dozen %>%
 ```
 
 **We plot the data as a scatter point plot **
-```{r fig.fullwidth=TRUE}
+```{r fig.fullwidth=TRUE, fig.height=6, fig.width=6}
 ggplot(data = dino_data, mapping = aes(x = x, y = y)) +
   geom_point()
 ```
@@ -151,29 +155,7 @@ You're done with the data analysis exercises, but we'd like you to do two more t
 
 
 
-- **Resize your figures:** 
-
-Click on the gear icon in on top of the R Markdown document, and select "Output Options..." in the dropdown menu. In the pop up dialogue box go to the Figures tab and change the height and width of the figures, and hit OK when done. Then, knit your document and see how you like the new sizes. Change and knit again and again until you're happy with the figure sizes. Note that these values get saved in the YAML.
+**I purposely removed the print command to display the whole table**
 
 
-
-You can also use different figure sizes for different figures. To do so click on the gear icon within the chunk where you want to make a change. Turn on "Use custom figure size" and enter the size for this figure. Changing the figure sizes added new options to these chunks: `fig.width` and `fig.height`. You can change them by defining different values directly in your R Markdown document as well with code like this:
-
-```
-knitr::opts_chunk(fig.width=3, fig.height=3)
-```
-
-
-
-- **Change the look of your report:** 
-
-Once again click on the gear icon in on top of the R Markdown document, and select "Output Options..." in the dropdown menu. In the General tab of the pop up dialogue box try out different Syntax highlighting and theme options. Hit OK and knit your document to see how it looks. Play around with these until you're happy with the look.
-
-
-*Yay, you're done! Commit all remaining changes, use the commit message "Done with Lab 1!", and push. Before you wrap up the assignment, make sure all documents are updated on your GitHub repo.*
-
-## Rubric (15 points possible)
-
-10 points if code and descriptions are complete for all questions.
-5 points for >= five commits with informative messages made to the repo.
-
+**I changed the global figure sizes and customized the dino figure to be slightly smaller. I also changed the theme.**

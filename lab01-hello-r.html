@@ -18,7 +18,7 @@
 <script src="lab01-hello-r_files/header-attrs/header-attrs.js"></script>
 <script src="lab01-hello-r_files/jquery/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="lab01-hello-r_files/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+<link href="lab01-hello-r_files/bootstrap/css/cosmo.min.css" rel="stylesheet" />
 <script src="lab01-hello-r_files/bootstrap/js/bootstrap.min.js"></script>
 <script src="lab01-hello-r_files/bootstrap/shim/html5shiv.min.js"></script>
 <script src="lab01-hello-r_files/bootstrap/shim/respond.min.js"></script>
@@ -32,8 +32,6 @@
        code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
        pre:not([class]) { background-color: white }</style>
 <script src="lab01-hello-r_files/navigation/tabsets.js"></script>
-<link href="lab01-hello-r_files/highlightjs/default.css" rel="stylesheet" />
-<script src="lab01-hello-r_files/highlightjs/highlight.js"></script>
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -44,18 +42,109 @@
   ul.task-list{list-style: none;}
     </style>
 
-<style type="text/css">code{white-space: pre;}</style>
-<script type="text/javascript">
-if (window.hljs) {
-  hljs.configure({languages: []});
-  hljs.initHighlightingOnLoad();
-  if (document.readyState && document.readyState === "complete") {
-    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+
+
+<style type="text/css">
+  code {
+    white-space: pre;
   }
+  .sourceCode {
+    overflow: visible;
+  }
+</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
 }
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    background-color: #2a211c;
+    color: #bdae9d;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #bdae9d;  padding-left: 4px; }
+div.sourceCode
+  { color: #bdae9d; background-color: #2a211c; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ffff00; } /* Alert */
+code span.an { color: #0066ff; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { } /* Attribute */
+code span.bn { color: #44aa43; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #43a8ed; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #049b0a; } /* Char */
+code span.cn { } /* Constant */
+code span.co { color: #0066ff; font-weight: bold; font-style: italic; } /* Comment */
+code span.do { color: #0066ff; font-style: italic; } /* Documentation */
+code span.dt { text-decoration: underline; } /* DataType */
+code span.dv { color: #44aa43; } /* DecVal */
+code span.er { color: #ffff00; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #44aa43; } /* Float */
+code span.fu { color: #ff9358; font-weight: bold; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #0066ff; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #43a8ed; font-weight: bold; } /* Keyword */
+code span.op { } /* Operator */
+code span.pp { font-weight: bold; } /* Preprocessor */
+code span.sc { color: #049b0a; } /* SpecialChar */
+code span.ss { color: #049b0a; } /* SpecialString */
+code span.st { color: #049b0a; } /* String */
+code span.va { } /* Variable */
+code span.vs { color: #049b0a; } /* VerbatimString */
+code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
+
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    var j = 0;
+    while (j < rules.length) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") {
+        j++;
+        continue;
+      }
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' && rule.style.backgroundColor === '') {
+        j++;
+        continue;
+      }
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
 </script>
-
-
 
 
 
@@ -205,12 +294,12 @@ dataset. Then, calculate the correlation coefficient between
 <p> </p>
 <p><strong>We pipe and filter the appropriate dataset and assign it to a
 variable.</strong></p>
-<pre class="r"><code>dino_data = datasaurus_dozen %&gt;%
-  filter(dataset == &quot;dino&quot;)</code></pre>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>dino_data <span class="ot">=</span> datasaurus_dozen <span class="sc">%&gt;%</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(dataset <span class="sc">==</span> <span class="st">&quot;dino&quot;</span>)</span></code></pre></div>
 <p><strong>We plot the data as a scatter point plot </strong></p>
-<pre class="r"><code>ggplot(data = dino_data, mapping = aes(x = x, y = y)) +
-  geom_point()</code></pre>
-<p><img src="lab01-hello-r_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> dino_data, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y)) <span class="sc">+</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
+<p><img src="lab01-hello-r_files/figure-html/unnamed-chunk-3-1.png" width="576" /></p>
 <p><strong>Using the following chunk of code we calculate the
 correlation coefficient, <span class="math inline">\(r_{d}\)</span>, to
 be <span class="math inline">\(-0.0645\)</span> </strong></p>
@@ -230,11 +319,11 @@ this dataset. How does this value compare to the <code>r</code> of
 <p> </p>
 <p><strong>We answer this similarly to the question above by simply
 changing datasets.</strong></p>
-<pre class="r"><code>star_data = datasaurus_dozen %&gt;%
-  filter(dataset == &quot;star&quot;)</code></pre>
-<pre class="r"><code>ggplot(data = star_data, mapping = aes(x = x, y = y)) +
-  geom_point()</code></pre>
-<p><img src="lab01-hello-r_files/figure-html/unnamed-chunk-5-1.png" width="672" />
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>star_data <span class="ot">=</span> datasaurus_dozen <span class="sc">%&gt;%</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(dataset <span class="sc">==</span> <span class="st">&quot;star&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> star_data, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y)) <span class="sc">+</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
+<p><img src="lab01-hello-r_files/figure-html/unnamed-chunk-5-1.png" width="960" />
  </p>
 <p><strong>we calculate the correlation coefficient , <span
 class="math inline">\(r_{s}\)</span>, to be <span
@@ -257,11 +346,11 @@ compare to the <code>r</code> of <code>dino</code>?</h4>
 <p> </p>
 <p><strong>We apply the same methods as in the previous
 exercises.</strong></p>
-<pre class="r"><code>circle_data = datasaurus_dozen %&gt;%
-  filter(dataset == &quot;circle&quot;)</code></pre>
-<pre class="r"><code>ggplot(data = circle_data, mapping = aes(x = x, y = y)) +
-  geom_point()</code></pre>
-<p><img src="lab01-hello-r_files/figure-html/unnamed-chunk-7-1.png" width="672" />
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>circle_data <span class="ot">=</span> datasaurus_dozen <span class="sc">%&gt;%</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(dataset <span class="sc">==</span> <span class="st">&quot;circle&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> circle_data, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y)) <span class="sc">+</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
+<p><img src="lab01-hello-r_files/figure-html/unnamed-chunk-7-1.png" width="960" />
  </p>
 <pre><code>dino_data %&gt;%
   summarize(r = cor(x, y))</code></pre>
@@ -278,52 +367,22 @@ id="finally-lets-plot-all-datasets-at-once.-in-order-to-do-this-we-will-make-use
 class="section level4">
 <h4>5. Finally, let’s plot all datasets at once. In order to do this we
 will make use of facetting.</h4>
-<pre class="r"><code>ggplot(datasaurus_dozen, aes(x = x, y = y, color = dataset))+
-  geom_point()+
-  facet_wrap(~ dataset, ncol = 3) +
-  theme(legend.position = &quot;none&quot;)</code></pre>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(datasaurus_dozen, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y, <span class="at">color =</span> dataset))<span class="sc">+</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> dataset, <span class="at">ncol =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)</span></code></pre></div>
 <p>And we can use the <code>group_by</code> function to generate all the
 summary correlation coefficients.</p>
-<pre class="r"><code>datasaurus_dozen %&gt;%
-  group_by(dataset) %&gt;%
-  summarize(r = cor(x, y)) %&gt;%
-  print(13)</code></pre>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>datasaurus_dozen <span class="sc">%&gt;%</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(dataset) <span class="sc">%&gt;%</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">r =</span> <span class="fu">cor</span>(x, y)) <span class="sc">%&gt;%</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="dv">13</span>)</span></code></pre></div>
 <p>You’re done with the data analysis exercises, but we’d like you to do
 two more things:</p>
-<ul>
-<li><strong>Resize your figures:</strong></li>
-</ul>
-<p>Click on the gear icon in on top of the R Markdown document, and
-select “Output Options…” in the dropdown menu. In the pop up dialogue
-box go to the Figures tab and change the height and width of the
-figures, and hit OK when done. Then, knit your document and see how you
-like the new sizes. Change and knit again and again until you’re happy
-with the figure sizes. Note that these values get saved in the YAML.</p>
-<p>You can also use different figure sizes for different figures. To do
-so click on the gear icon within the chunk where you want to make a
-change. Turn on “Use custom figure size” and enter the size for this
-figure. Changing the figure sizes added new options to these chunks:
-<code>fig.width</code> and <code>fig.height</code>. You can change them
-by defining different values directly in your R Markdown document as
-well with code like this:</p>
-<pre><code>knitr::opts_chunk(fig.width=3, fig.height=3)</code></pre>
-<ul>
-<li><strong>Change the look of your report:</strong></li>
-</ul>
-<p>Once again click on the gear icon in on top of the R Markdown
-document, and select “Output Options…” in the dropdown menu. In the
-General tab of the pop up dialogue box try out different Syntax
-highlighting and theme options. Hit OK and knit your document to see how
-it looks. Play around with these until you’re happy with the look.</p>
-<p><em>Yay, you’re done! Commit all remaining changes, use the commit
-message “Done with Lab 1!”, and push. Before you wrap up the assignment,
-make sure all documents are updated on your GitHub repo.</em></p>
-</div>
-<div id="rubric-15-points-possible" class="section level2">
-<h2>Rubric (15 points possible)</h2>
-<p>10 points if code and descriptions are complete for all questions. 5
-points for &gt;= five commits with informative messages made to the
-repo.</p>
+<p><strong>I purposely removed the print command to display the whole
+table</strong></p>
+<p><strong>I changed the global figure sizes and customized the dino
+figure to be slightly smaller. I also changed the theme.</strong></p>
 </div>
 </div>
 
